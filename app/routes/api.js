@@ -13,7 +13,7 @@ router.post('/fileanalyse', upload.single('uploadFile'), (req, res, next) => {
   fs.unlink(filePath, (err) => {
     if (err) return console.log(err);
   })
-  res.send(fileSize)
+  res.json({fileSize})
 })
 
 module.exports = router;
